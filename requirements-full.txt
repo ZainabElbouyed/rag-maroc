@@ -1,0 +1,7 @@
+-r requirements.txt
+# Embeddings neuronaux, reranker, LLM, OCR
+sentence-transformers
+anthropic
+pytesseract
+Pillow
+pdfplumber

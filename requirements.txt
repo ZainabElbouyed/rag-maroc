@@ -1,0 +1,8 @@
+# Noyau : suffit pour tout exécuter hors ligne (embeddings TF-IDF + mode extractif)
+numpy
+scipy
+scikit-learn
+pymupdf
+reportlab
+streamlit
+requests

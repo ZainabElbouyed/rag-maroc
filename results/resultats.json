@@ -1,0 +1,28 @@
+{
+  "best_config": {
+    "embedding": "st:intfloat/multilingual-e5-small",
+    "chunking": "article",
+    "mode": "hybrid",
+    "n_chunks": 193,
+    "hit@3": 1.0,
+    "hit@5": 1.0,
+    "hit@8": 1.0,
+    "mrr": 1.0,
+    "n": 41
+  },
+  "generation": {
+    "llm": "ollama:qwen2.5:7b",
+    "correct_rate": 0.926829268292683,
+    "partial_rate": 0.0,
+    "false_rate": 0.07317073170731707,
+    "false_abstention_rate": 0.0,
+    "abstain_rate": 1.0,
+    "n_answerable": 41,
+    "n_trap": 7
+  },
+  "criteria": {
+    "hit_at_5": 0.8,
+    "correct_rate": 0.7,
+    "abstain_rate": 0.8
+  }
+}

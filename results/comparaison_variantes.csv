@@ -1,0 +1,13 @@
+embedding,chunking,mode,n_chunks,hit@3,hit@5,hit@8,mrr,n
+tfidf,article,dense,193,0.975609756097561,1.0,1.0,0.9288617886178863,41
+tfidf,article,bm25,193,0.975609756097561,1.0,1.0,0.9329268292682927,41
+tfidf,article,hybrid,193,1.0,1.0,1.0,0.9512195121951219,41
+tfidf,fixed,dense,194,1.0,1.0,1.0,0.9715447154471545,41
+tfidf,fixed,bm25,194,1.0,1.0,1.0,0.9471544715447155,41
+tfidf,fixed,hybrid,194,1.0,1.0,1.0,0.9634146341463414,41
+st:intfloat/multilingual-e5-small,article,dense,193,1.0,1.0,1.0,1.0,41
+st:intfloat/multilingual-e5-small,article,bm25,193,0.975609756097561,1.0,1.0,0.9329268292682927,41
+st:intfloat/multilingual-e5-small,article,hybrid,193,1.0,1.0,1.0,1.0,41
+st:intfloat/multilingual-e5-small,fixed,dense,194,1.0,1.0,1.0,0.9715447154471545,41
+st:intfloat/multilingual-e5-small,fixed,bm25,194,1.0,1.0,1.0,0.9471544715447155,41
+st:intfloat/multilingual-e5-small,fixed,hybrid,194,1.0,1.0,1.0,0.9878048780487805,41

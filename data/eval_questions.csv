@@ -1,0 +1,49 @@
+id,question,mots_cles,doc_id,article,repondable
+Q01,Quelles sont les langues officielles de l’Etat ?,arabe|amazighe,CONST,5,1
+Q02,Quelle est la devise du Royaume ?,"dieu, la patrie, le roi",CONST,4,1
+Q03,Quelle est la religion de l’Etat ?,islam,CONST,3,1
+Q04,Quel est l’emblème du Royaume ?,drapeau rouge|etoile verte,CONST,4,1
+Q05,Quel est le droit premier de tout être humain ?,droit a la vie,CONST,20,1
+Q06,La pratique de la torture est-elle punie ?,crime puni par la loi,CONST,22,1
+Q07,Le droit de grève est-il garanti ?,greve est garanti,CONST,29,1
+Q08,La loi peut-elle avoir un effet rétroactif ?,effet retroactif,CONST,6,1
+Q09,Pour combien d’années les membres de la Chambre des Représentants sont-ils élus ?,cinq ans,CONST,62,1
+Q10,Quel est le nombre maximum de membres de la Chambre des Conseillers ?,120,CONST,63,1
+Q11,Pour combien d’années les conseillers sont-ils élus ?,six ans,CONST,63,1
+Q12,Quand s’ouvre la première session du Parlement ?,deuxieme vendredi d'octobre,CONST,65,1
+Q13,Dans quel délai le Roi promulgue-t-il la loi ?,trente jours,CONST,50,1
+Q14,Dans quel délai la loi promulguée doit-elle être publiée au Bulletin officiel ?,un mois,CONST,50,1
+Q15,Comment est nommé le Chef du Gouvernement ?,parti politique arrive en tete,CONST,47,1
+Q16,Combien de membres compte la Cour Constitutionnelle ?,douze membres,CONST,130,1
+Q17,Quelle est la durée du mandat des membres de la Cour Constitutionnelle ?,neuf ans,CONST,130,1
+Q18,À quel âge le Roi cesse-t-il d’être mineur ?,dix-huit ans,CONST,44,1
+Q19,Pour quelle durée l’état de siège peut-il être déclaré ?,trente jours,CONST,74,1
+Q20,Dans quel délai le gouvernement doit-il répondre aux questions des parlementaires ?,vingt jours,CONST,100,1
+Q21,Quelle fraction des membres doit signer une motion de censure ?,cinquieme,CONST,105,1
+Q22,Quel est le délai de réponse du gouvernement à une motion d’interpellation de la Chambre des Conseillers ?,six jours,CONST,106,1
+Q23,Combien de jours francs avant le vote sur la question de confiance ?,trois jours francs,CONST,103,1
+Q24,Combien de sessions par an tient le Conseil supérieur du pouvoir judiciaire ?,deux sessions,CONST,116,1
+Q25,Qui préside le Conseil supérieur du pouvoir judiciaire ?,le roi,CONST,56|115,1
+Q26,Toute personne a-t-elle droit à un procès équitable ?,proces equitable,CONST,120|23,1
+Q27,Qui est présumé innocent jusqu’à sa condamnation ?,presume innocent,CONST,119|23,1
+Q28,Quelle instance est créée pour lutter contre la corruption ?,instance nationale de la probite,CONST,36|167,1
+Q29,Le droit de propriété est-il garanti ?,droit de propriete est garanti,CONST,35,1
+Q30,Quelles dispositions ne peuvent faire l’objet d’aucune révision ?,religion musulmane|forme monarchique,CONST,175,1
+Q31,Comment la révision de la Constitution devient-elle définitive ?,referendum,CONST,174,1
+Q32,Quelle autorité est créée pour la parité entre les hommes et les femmes ?,autorite pour la parite,CONST,19|164,1
+Q33,Quelle institution régule la concurrence sur les marchés ?,conseil de la concurrence,CONST,166,1
+Q34,Quelle institution contrôle les comptes des régions ?,cours regionales des comptes,CONST,149,1
+Q35,Quelles sont les collectivités territoriales du Royaume ?,regions|prefectures|provinces|communes,CONST,135,1
+Q36,Les magistrats peuvent-ils adhérer à un parti politique ?,ne peuvent adherer,CONST,111,1
+Q37,Quel est le rôle des organisations syndicales ?,defense et a la promotion,CONST,8,1
+Q38,Les citoyens ont-ils le droit d’accéder à l’information détenue par l’administration ?,droit d'acceder a l'information,CONST,27,1
+Q39,La censure préalable de la presse est-elle permise ?,aucune forme de censure prealable,CONST,28,1
+Q40,Les citoyens peuvent-ils présenter des pétitions ?,petitions aux pouvoirs publics,CONST,15,1
+Q41,Qui est le chef suprême des Forces Armées Royales ?,le roi est le chef supreme,CONST,53,1
+Q42,Quelle est la durée légale du préavis de licenciement d’un salarié ?,,,,0
+Q43,Quel est le montant du salaire minimum au Maroc ?,,,,0
+Q44,Quelles sont les conditions pour obtenir un permis de conduire ?,,,,0
+Q45,Quelle est la peine prévue pour le vol ?,,,,0
+Q46,Quel est le taux de la TVA ?,,,,0
+Q47,Comment créer une société anonyme ?,,,,0
+Q48,Quel est l’âge de départ à la retraite des fonctionnaires ?,,,,0

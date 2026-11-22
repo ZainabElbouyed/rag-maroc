@@ -1,0 +1,19 @@
+# Environnement Python
+.venv/
+venv/
+__pycache__/
+*.pyc
+
+# Secrets : ne JAMAIS publier une clé API
+.env
+*.key
+
+# Index vectoriels : régénérables (python run_all.py). Supprimez cette ligne
+# si vous voulez publier les index et éviter ~45 min de recalcul des embeddings.
+index/
+
+# Divers
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/

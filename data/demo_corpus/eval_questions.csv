@@ -1,0 +1,41 @@
+id,question,mots_cles,doc_id,article,repondable
+Q01,Quelle est la durée maximale de la période d’essai pour un cadre ?,60 jours,D01,5,1
+Q02,Combien de temps peut durer un CDD et combien de fois est-il renouvelable ?,12 mois|une seule fois,D01,4,1
+Q03,Le contrat de travail doit-il être établi par écrit ?,par ecrit,D01,3,1
+Q04,Dans quel délai l’employeur doit-il remettre le certificat de travail ?,8 jours,D01,8,1
+Q05,Quelle est la durée limite d’une clause de non-concurrence ?,12 mois,D01,9,1
+Q06,Quelle est la durée normale hebdomadaire du travail ?,44 heures,D02,1,1
+Q07,De combien sont majorées les heures supplémentaires de nuit ?,60 %,D02,2,1
+Q08,Combien d’heures supplémentaires peut-on effectuer par an au maximum ?,100 heures,D02,3,1
+Q09,Combien de jours de congé annuel payé un salarié acquiert-il par an ?,24 jours,D02,5,1
+Q10,Quelle est la durée du congé de maternité ?,15 semaines,D02,7,1
+Q11,Combien de jours dure le congé de paternité ?,10 jours,D02,8,1
+Q12,Quel est le salaire minimum horaire dans les activités non agricoles ?,"18,50",D03,1,1
+Q13,Quelle part du salaire mensuel peut être retenue au maximum ?,10 %,D03,4,1
+Q14,Quelle amende encourt l’employeur qui paie sous le salaire minimum ?,2 000|5 000,D03,6,1
+Q15,À partir de combien de salariés faut-il un comité de sécurité et de santé ?,50 salaries,D04,2,1
+Q16,Dans quel délai faut-il déclarer un accident du travail ?,48 heures,D04,4,1
+Q17,Un salarié peut-il quitter son poste en cas de danger grave et imminent ?,danger grave,D04,5,1
+Q18,À partir de quel effectif un règlement intérieur est-il obligatoire ?,10 salaries,D05,1,1
+Q19,Quelle est la durée maximale d’une mise à pied ?,8 jours,D05,4,1
+Q20,"Quelles sont les sanctions disciplinaires prévues, par ordre de gravité ?",avertissement|blame|mise a pied|licenciement,D05,4,1
+Q21,Quel préavis doit respecter l’employeur pour un salarié ayant 6 ans d’ancienneté ?,3 mois,D06,4,1
+Q22,Quelle indemnité de licenciement pour un salarié ayant 3 ans d’ancienneté ?,10 jours de salaire,D06,6,1
+Q23,Dans quel délai peut-on contester un licenciement abusif devant le tribunal ?,90 jours,D06,8,1
+Q24,Quel est le plafond de l’indemnité pour licenciement abusif ?,24 mois,D06,9,1
+Q25,Peut-on licencier une salariée parce qu’elle est enceinte ?,grossesse,D06,2,1
+Q26,Combien de délégués du personnel faut-il élire dans un établissement de 60 salariés ?,26 a 100,D07,2,1
+Q27,Quelle est la durée du mandat des délégués du personnel ?,4 ans,D07,3,1
+Q28,Combien d’heures de délégation par mois ont les délégués ?,15 heures,D07,4,1
+Q29,Quel est l’âge minimum d’admission au travail ?,16 ans,D08,1,1
+Q30,Les moins de 18 ans peuvent-ils travailler de nuit ?,interdit,D08,4,1
+Q31,À quelle fréquence a lieu la visite médicale des salariés travaillant de nuit ?,annuelle,D09,3,1
+Q32,Quel préavis faut-il respecter avant de déclencher une grève ?,10 jours,D10,3,1
+Q33,Le salaire est-il dû pendant la grève ?,pas du,D10,5,1
+Q34,Quel est le taux de la TVA applicable aux services ?,,,,0
+Q35,Quelles sont les conditions pour créer une société anonyme ?,,,,0
+Q36,Quelle est la durée du service militaire obligatoire ?,,,,0
+Q37,Comment obtenir un permis de conduire ?,,,,0
+Q38,Quel est le montant de l’impôt sur le revenu pour un salaire de 10 000 dirhams ?,,,,0
+Q39,Quelles sont les règles d’urbanisme pour construire un immeuble ?,,,,0
+Q40,Quel est l’âge légal de la retraite ?,,,,0
