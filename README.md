@@ -20,33 +20,50 @@ python -m unittest discover tests  # tests
 
 Sans clé API ni modèle téléchargé, le système tourne en **mode extractif** : embeddings TF-IDF + BM25, réponse = phrases les plus proches de la question, avec la source. C'est la baseline.
 
+
+
 ## Activer les vrais composants
 
 ```bash
 pip install -r requirements-full.txt
 python run_all.py                  # ajoute multilingual-e5-small (téléchargé au 1er lancement)
 python run_all.py --full           # ajoute bge-m3 (~2,2 Go)
-export ANTHROPIC_API_KEY=sk-ant-...        # Windows : set ANTHROPIC_API_KEY=...
-export RAG_LLM_MODEL=claude-sonnet-5-5     # optionnel
-python run_all.py                  # la génération passe par Claude
 ```
 
-Alternative gratuite : Ollama (`ollama pull mistral`), détecté automatiquement (`OLLAMA_MODEL` pour changer).
-**Ces composants (e5, bge-m3, Claude, Ollama) n'ont pas pu être exécutés lors de la création du projet** (pas d'accès réseau) : le code est écrit mais non testé. Signalez toute erreur.
+Choisir le LLM (au moins l'un des deux, sinon mode extractif) :
 
-## Résultats mesurés (baseline TF-IDF + BM25, mode extractif, 48 questions dont 7 hors corpus)
+```powershell
+# Option A : Ollama (local, gratuit). Exemple utilisé pour les résultats ci-dessous :
+ollama pull qwen2.5:7b
+$env:OLLAMA_MODEL="qwen2.5:7b"          # Mac/Linux : export OLLAMA_MODEL=qwen2.5:7b
+python run_all.py --llm ollama
 
-| Mesure | Résultat |
-|---|---|
-| Recherche : le bon article est dans le top-5 (hybride) | 100 % (MRR 0,95) |
-| Réponses correctes (juge automatique par mots-clés) | 88 % |
-| Refus correct sur les questions hors corpus | 57 % (cible 80 % : **non atteinte**) |
+# Option B : Claude (API payante)
+$env:ANTHROPIC_API_KEY="sk-ant-..."     # Mac/Linux : export ANTHROPIC_API_KEY=...
+$env:RAG_LLM_MODEL="claude-sonnet-5-5"  # optionnel
+python run_all.py --llm anthropic
+```
+
+`OLLAMA_MODEL` vaut `mistral` par défaut : si ce modèle n'est pas installé, le projet retombe en mode extractif avec un avertissement. La variable n'est valable que dans la fenêtre PowerShell où elle est définie.
+
+**État des tests :** e5-small et Ollama (`qwen2.5:7b`) ont été exécutés avec succès. `bge-m3`, le reranker et Claude (API) sont implémentés mais **non testés**.
+
+## Résultats mesurés (48 questions : 41 répondables, 7 hors corpus)
+
+| Mesure | Baseline TF-IDF, mode extractif | e5-small + `qwen2.5:7b` |
+|---|---|---|
+| Le bon article est dans le top-5 (hybride) | 100 % | 100 % |
+| Rang moyen du bon article (MRR) | 0,95 | 1,00 |
+| Réponses correctes (juge automatique par mots-clés) | 88 % | 93 % (38/41) |
+| Refus correct sur les questions hors corpus | 57 % (4/7) | 100 % (7/7) |
+
+Les trois critères de succès (80 % / 70 % / 80 %) sont atteints avec le LLM ; le refus hors corpus ne l'est pas en mode extractif.
 
 Lecture honnête :
-- La **recherche** fonctionne très bien sur ce texte : un article de loi est court et son vocabulaire est précis.
-- Le **refus hors corpus** est le point faible du mode sans LLM : la règle (couverture des mots de la question) laisse passer des questions dont les mots existent dans la Constitution (« peine », « taux », « âge »). C'est là qu'un LLM avec le prompt strict doit améliorer les choses : à mesurer.
-- Le mode extractif ne lit que le meilleur passage : quand le bon article est en 2e ou 3e position (ex. Cour constitutionnelle), la réponse est fausse alors que la recherche a bien trouvé l'article. Un LLM lit les 5 passages.
-- Le jeu de test est petit et écrit par nous ; le juge automatique est approximatif. Validez à la main `results/reponses_a_valider.csv` (colonne `verdict_manuel`) avant de citer des chiffres.
+- La **recherche** fonctionne très bien sur ce texte, mais elle est **saturée** : toutes les variantes atteignent 100 % de Hit@5. L'avantage d'e5 (MRR 1,00 contre 0,93 à 0,97) porte sur quelques rangs sur 41 questions : indicatif, pas établi.
+- Le **LLM améliore nettement le refus hors corpus** par rapport au mode extractif (7/7 contre 4/7). Le mode extractif ne lit que le meilleur passage et son garde-fou lexical laisse passer des questions dont les mots existent dans la Constitution (« peine », « taux », « âge »).
+- Le **juge automatique est approximatif** : sur les 3 réponses notées fausses avec le LLM, deux sont correctes à la relecture (Q06 torture, Q41 chef des armées : mots-clés trop rigides). Une est une vraie erreur (Q18) : le modèle répond « vingt ans » alors que l'article 44 fixe la fin de la minorité du Roi à dix-huit ans (vingt ans est l'âge jusqu'auquel le Conseil de Régence reste consultatif). La recherche avait trouvé le bon article ; l'erreur vient de la génération. Après relecture, le score serait d'environ 40/41, **à confirmer en validant `results/reponses_a_valider.csv`** (colonne `verdict_manuel`).
+- Les questions sont plutôt faciles, le jeu de test est petit et écrit par nous : ces chiffres ne valent que pour la Constitution seule.
 - Deux tentatives d'amélioration du mode extractif (pondération des termes rares, refus si un mot est inconnu du corpus) ont **dégradé** les résultats (88 % → 66 % de réponses correctes) et ont été retirées. Régler ces heuristiques sur le jeu de test fausserait les chiffres : si vous les modifiez, gardez un jeu de test séparé.
 
 ## Ajouter des textes (objectif 10 à 20)
